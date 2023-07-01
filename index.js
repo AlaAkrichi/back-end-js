@@ -19,6 +19,7 @@ const machineRoutes = require("./routes/MachinesRoute")
 const cpuRoutes = require("./routes/CpuRoutes")
 const stockageRoutes = require("./routes/StockageRoutes")
 const ramRoutes = require("./routes/RamRoutes")
+const authenificationRoutes = require("./routes/AuthentificationRoutes")
 dbConnection()
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended:false}))
@@ -38,6 +39,7 @@ app.use("/api/machines",machineRoutes)
 app.use("/api/cpus",cpuRoutes)
 app.use("/api/stockages",stockageRoutes)
 app.use("/api/rams",ramRoutes)
+app.use("/api/login",authenificationRoutes)
 
 
 app.listen(port,()=>{
