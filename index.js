@@ -24,8 +24,6 @@ dbConnection()
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended:false}))
 app.use(cors())
-
-
 app.use("/api/clients",clientRoute)
 app.use("/api/demandes",demandesRoute)
 app.use("/api/factures",factureRoutes)

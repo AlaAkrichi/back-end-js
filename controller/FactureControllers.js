@@ -3,7 +3,7 @@ const Facture = require("../models/Facture")
 
 
 const getFacture = asyncHandler(async(req,res)=>{
-    const id = parseInt(req.params.id)
+    const id = req.params.id
     const facture = await Facture.findOne({id}).populate("client")
     facture  ===null ? res.status(404).json({"message":"not found"}) :res.status(200).json(facture)
 })

@@ -3,7 +3,7 @@ const Demande = require("../models/Demande")
 
 
 const getDemande = asyncHandler(async(req,res)=>{
-    const id = parseInt(req.params.id)
+    const id = req.params.id
     const demande = await Demande.findOne({id}).populate("client")
     demande  ===null ? res.status(404).json({"message":"not found"}) :res.status(200).json(demande)
 })
