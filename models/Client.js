@@ -2,7 +2,7 @@ const mongoose= require("mongoose")
 
 const clientSchema= mongoose.Schema({
     id : {
-        type:Number,
+        type:String,
         required:true, 
         index: true,
         unique:true
